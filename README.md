@@ -20,8 +20,7 @@ exit;
 
 # Clone repository (ganti dengan URL repository Anda)
 
-git clone https://github.com/username/miraitest.git
-cd miraitest
+lakukan git clone atau download zip
 
 # Install dependencies PHP
 
