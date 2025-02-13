@@ -1,45 +1,59 @@
 # MiraiTest - Aplikasi Diary dan Zipcode
 
-Aplikasi web untuk mengelola diary dan mencari informasi kode pos menggunakan Laravel dan React.
+![MiraiTest Banner](https://via.placeholder.com/1200x400?text=MiraiTest+Diary+%26+Zipcode)
 
-## Persyaratan Sistem
+**MiraiTest** adalah aplikasi berbasis web yang memungkinkan pengguna untuk mengelola diary pribadi dan mencari informasi kode pos. Aplikasi ini dibangun menggunakan **Laravel** di backend dan **React** di frontend.
 
--   PHP >= 8.1
--   Node.js >= 16.x
--   Composer
--   MySQL/MariaDB
--   Git
+---
 
-### 1. Persiapan Awal
+## 🚀 Fitur Utama
 
-# Buat database baru di MySQL
+-   📖 **Kelola Diary**: Tambah, edit, dan hapus catatan harian dengan mudah.
+-   📍 **Cari Kode Pos**: Temukan informasi kode pos berdasarkan lokasi.
+-   🔐 **Autentikasi**: Sistem login dan registrasi menggunakan Laravel Sanctum.
+-   🎨 **UI Modern**: Menggunakan React dan Bootstrap untuk tampilan yang responsif.
 
-mysql -u root -p
-CREATE DATABASE miraitest;
-exit;
+---
 
-# Clone repository (ganti dengan URL repository Anda)
+## 🛠 Persyaratan Sistem
 
-lakukan git clone atau download zip
+Pastikan Anda memiliki perangkat lunak berikut terinstal sebelum memulai:
+
+-   ✅ PHP >= 8.1
+-   ✅ Node.js >= 16.x
+-   ✅ Composer
+-   ✅ MySQL/MariaDB
+-   ✅ Git
+
+---
+
+## 📌 Instalasi dan Konfigurasi
+
+### 1️⃣ **Persiapan Awal**
+
+```bash
+# Clone repository
+git clone https://github.com/username/miraitest.git
+cd miraitest
 
 # Install dependencies PHP
-
 composer install
 
 # Install dependencies JavaScript
-
 npm install
 
 # Copy file environment
-
 cp .env.example .env
 
 # Generate application key
-
 php artisan key:generate
+```
 
-### 2. Konfigurasi Environment
+### 2️⃣ **Konfigurasi Environment**
 
+Edit file `.env` sesuai dengan pengaturan database Anda:
+
+```env
 APP_NAME=MiraiTest
 APP_URL=http://localhost:8000
 
@@ -51,84 +65,100 @@ DB_USERNAME=root
 DB_PASSWORD=
 
 FILESYSTEM_DISK=public
+```
 
-### 3. Setup Database dan Storage
+### 3️⃣ **Setup Database & Storage**
+
+```bash
+# Buat database baru di MySQL
+mysql -u root -p -e "CREATE DATABASE miraitest;"
 
 # Jalankan migrasi database
-
 php artisan migrate
 
 # Link storage untuk upload gambar
-
 php artisan storage:link
 
 # Publish sanctum configuration
-
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+```
 
-### 4. Install Package yang Diperlukan
+### 4️⃣ **Install Package yang Diperlukan**
 
-# Install package tambahan yang diperlukan
+```bash
+npm install react-router-dom axios react-bootstrap bootstrap bootstrap-icons
+```
 
-npm install react-router-dom
-npm install axios
-npm install react-bootstrap bootstrap
-npm install bootstrap-icons
+---
 
-### Development Mode
+## 🔥 Mode Pengembangan & Produksi
 
-# Terminal 1 - Laravel Server
+### **Development Mode**
 
+```bash
+# Jalankan Laravel server
 php artisan serve
 
-# Terminal 2 - Vite Development Server
-
+# Jalankan Vite development server
 npm run dev
+```
 
-### Production Mode
+### **Production Mode**
 
-# Build assets untuk production
-
+```bash
+# Build assets untuk produksi
 npm run build
 
 # Jalankan server
-
 php artisan serve
+```
 
-### Backend Files
+---
 
+## 📁 Struktur Direktori
+
+### **Backend (Laravel)**
+
+```
 ├── app
-│ ├── Http
-│ │ ├── Controllers
-│ │ │ ├── Api
-│ │ │ │ ├── AuthController.php
-│ │ │ │ └── DiaryController.php
-│ │ │ └── ZipcodeController.php
-│ ├── Models
-│ │ ├── User.php
-│ │ ├── Diary.php
-│ │ └── Zipcode.php
+│   ├── Http
+│   │   ├── Controllers
+│   │   │   ├── Api
+│   │   │   │   ├── AuthController.php
+│   │   │   │   ├── DiaryController.php
+│   │   │   │   └── ZipcodeController.php
+│   ├── Models
+│   │   ├── User.php
+│   │   ├── Diary.php
+│   │   └── Zipcode.php
 ├── database
-│ └── migrations
-│ ├── create_users_table.php
-│ ├── create_diaries_table.php
-│ └── create_zipcodes_table.php
+│   ├── migrations
+│   │   ├── create_users_table.php
+│   │   ├── create_diaries_table.php
+│   │   └── create_zipcodes_table.php
 └── routes
-├── api.php
-└── web.php
+    ├── api.php
+    └── web.php
+```
 
-### Frontend Files
+### **Frontend (React)**
 
+```
 ├── resources
-│ ├── js
-│ │ ├── components
-│ │ │ ├── Login.jsx
-│ │ │ ├── Register.jsx
-│ │ │ ├── Navbar.jsx
-│ │ │ ├── DiaryList.jsx
-│ │ │ ├── DiaryForm.jsx
-│ │ │ └── Zipcode.jsx
-│ │ ├── app.jsx
-│ │ └── bootstrap.js
-│ └── views
-│ └── app.blade.php
+│   ├── js
+│   │   ├── components
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── DiaryList.jsx
+│   │   │   ├── DiaryForm.jsx
+│   │   │   └── Zipcode.jsx
+│   │   ├── app.jsx
+│   │   └── bootstrap.js
+│   ├── views
+│   │   └── app.blade.php
+```
+
+---
+
+@zidaniqbal
